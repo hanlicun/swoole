@@ -84,9 +84,13 @@ service httpd restart
 vi /etc/profile
 
 在文件末尾加上如下两行代码 （shift+g)
-PATH=/usr/local/webserver/php/bin:$PATH
-export PATH
 
+
+PATH=/usr/local/webserver/php/bin:$PATH
+
+export PATH
+马上生效：
+#source /etc/profile
 
 
 搭建完毕
