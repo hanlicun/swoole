@@ -68,6 +68,14 @@ phpize
 ./configure --with-php-config=/usr/local/webserver/php/bin/php-config
 make &&  make install
 
-//   /usr/local/webserver/php/lib/php/extensions/no-debug-non-zts-20121212/
+extension_dir=/usr/local/webserver/php/lib/php/extensions/no-debug-non-zts-20121212/
 
 修改php.ini加入extension=swoole.so
+
+
+service httpd restart
+
+
+
+搭建完毕
+
