@@ -70,7 +70,11 @@ make &&  make install
 
 extension_dir=/usr/local/webserver/php/lib/php/extensions/no-debug-non-zts-20121212/
 
+DirectoryIndex index.php index.html
+
 修改php.ini加入extension=swoole.so
+
+
 
 
 service httpd restart
