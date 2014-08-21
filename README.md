@@ -80,6 +80,14 @@ DirectoryIndex index.php index.html
 service httpd restart
 
 
+修改PHP环境变量
+vi /etc/profile
+
+在文件末尾加上如下两行代码 （shift+g)
+PATH=/usr/local/webserver/php/bin:$PATH
+export PATH
+
+
 
 搭建完毕
 
