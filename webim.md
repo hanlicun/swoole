@@ -49,6 +49,7 @@ config.php 配置
 
 
 <?php
+
 $config['server'] = array(
     'host' => '0.0.0.0',
     'port' => '9503',
@@ -70,6 +71,7 @@ $config['webim'] = array(
 return $config;
 
 
+
 ###############################################################
 
 
@@ -77,34 +79,59 @@ swoole.ini 配置
 
 
 
+
 [request]
+
 max_post_size = 2M
+
 default_page = "index.html"
 
 [server]
+
 max_request = 2000
 webroot = 'http://127.0.0.1:8888'
+
 document_root = "/data/wwwroot/"
+
 process_rename = 1
+
 keepalive = 1
+
 ;gzip_open = 1
+
 user = www-data
+
 expire_open = 1
 
+
 [session]
+
 cookie_life = 1800
+
 session_life = 1800
+
 cache_url = "file://localhost#sess"
 
+
 [access]
+
 deny_dir = "libs,class,templates"
+
 static_dir = "static/,"
+
 static_ext = "js,jpg,gif,png,css,html"
+
 dynamic_ext = "php"
+
 
 [apps]
 charset = "utf-8"
+
 ;auto_reload = 1
+
+
+
+
 
 
 
