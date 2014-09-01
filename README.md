@@ -33,6 +33,20 @@ yum -y install gcc gcc-c++ autoconf
 
 
 
+     #cp /usr/local/webserver/httpd/bin/apachectl     /etc/rc.d/init.d/httpd
+     
+     #vi /etc/rc.d/init.d/httpd
+     
+     添加以下注释信息：
+	# chkconfig: 345 85 15
+	#  description: Activates/Deactivates Apache Web Server
+	第一行3个数字参数意义分别为：哪些Linux级别需要启动httpd(3,4,5)；启动序号(85)；关闭序号(15)。
+     chkconfig --add httpd
+     chkconfig httpd on
+     service httpd restart
+
+
+
 2、安装php
    
    
@@ -67,17 +81,7 @@ yum -y install gcc gcc-c++ autoconf
 
 
 
-     #cp /usr/local/webserver/httpd/bin/apachectl     /etc/rc.d/init.d/httpd
-     
-     #vi /etc/rc.d/init.d/httpd
-     
-     添加以下注释信息：
-	# chkconfig: 345 85 15
-	#  description: Activates/Deactivates Apache Web Server
-	第一行3个数字参数意义分别为：哪些Linux级别需要启动httpd(3,4,5)；启动序号(85)；关闭序号(15)。
-     chkconfig --add httpd
-     chkconfig httpd on
-     service httpd restart
+   
 
 
 
