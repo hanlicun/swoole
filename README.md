@@ -35,25 +35,42 @@ yum -y install gcc gcc-c++ autoconf
 
 2、安装php
    
+   
    （1）先安装libxml
+   
     tar zxvf libxml2-2.6.30.tar.gz
+    
     cd libxml2-2.6.30
+    
     ./configure --prefix=/usr/local/webserver/libxml2
+    
     make&&make install
 
     （2）安装php
+    
   tar zxvf php-5.5.15.tar.gz 
   
    cd php-5.5.15
    
-     ./configure --prefix=/usr/local/webserver/php --with-config-file-path=/usr/local/webserver/php/etc --with-apxs2=/usr/local/webserver/httpd/bin/apxs  --with-libxml-dir=/usr/local/webserver/libxml2 --enable-soap --enable-socket    
+   
+     ./configure --prefix=/usr/local/webserver/php --with-config-file-path=/usr/local/webserver/php/etc --with-apxs2=/usr/local/webserver/httpd/bin/apxs  --with-libxml-dir=/usr/local/webserver/libxml2 --enable-soap --enable-sockets    
+
 
      make && make  install
      
+     
      cp php.ini-dist /usr/local/webserver/php/etc/php.ini  
+     
+
+
+
+
+
 
      #cp /usr/local/webserver/httpd/bin/apachectl     /etc/rc.d/init.d/httpd
+     
      #vi /etc/rc.d/init.d/httpd
+     
      添加以下注释信息：
 	# chkconfig: 345 85 15
 	#  description: Activates/Deactivates Apache Web Server
@@ -61,6 +78,7 @@ yum -y install gcc gcc-c++ autoconf
      chkconfig --add httpd
      chkconfig httpd on
      service httpd restart
+
 
 
     //创建配置文件 
