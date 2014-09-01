@@ -97,7 +97,7 @@ yum -y install gcc gcc-c++ autoconf
 
  cd swoole
  
-phpize
+/usr/local/webserver/php/bin/phpize
 
 ./configure --with-php-config=/usr/local/webserver/php/bin/php-config
 
