@@ -14,14 +14,22 @@ yum -y install gcc gcc-c++ autoconf
 
 
 1、安装Apache
+
    mkdir /usr/local/webserver
+   
    tar zxvf httpd.tar.gz
+   
    ./configure --prefix=/usr/local/webserver/httpd
+   
    make 
+   
    make install
    
+   
    启动apache
+   
    /usr/local/webserver/httpd/bin/apachectl start
+
 
 
 
