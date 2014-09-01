@@ -82,32 +82,34 @@ yum -y install gcc gcc-c++ autoconf
 
 
 
-
-
-
-   
-
-
-
     //创建配置文件 
+    
     # vi /usr/local/webserver/httpd/conf/httpd.conf
+    
     //使用vi编辑apache配置文件
+    
     Addtype application/x-httpd-php .php .phtml  
+    
     AddType application/x-httpd-php-source  .phps
     
 
 3、安装swoole扩展
+
  cd swoole
+ 
 phpize
+
 ./configure --with-php-config=/usr/local/webserver/php/bin/php-config
+
 make &&  make install
 
 extension_dir=/usr/local/webserver/php/lib/php/extensions/no-debug-non-zts-20121212/
 
+
 DirectoryIndex index.php index.html
 
-修改php.ini加入extension=swoole.so
 
+修改php.ini加入extension=swoole.so
 
 
 
@@ -123,6 +125,7 @@ vi /etc/profile
 PATH=/usr/local/webserver/php/bin:$PATH
 
 export PATH
+
 马上生效：
 #source /etc/profile
 
